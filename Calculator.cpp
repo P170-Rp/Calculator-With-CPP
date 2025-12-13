@@ -42,11 +42,11 @@ class P_and_L_And_Per:public Besic_Arithmetic{
     int p_L_per(float Coast_price){
         if(profit>0)
         {
-            int per = (profit/Coast_price)*100;
+            float per = (profit/Coast_price)*100;
             cout<<"profit Percentage is:"<<per<<"%";
         }
         else{
-            int per = (profit/Coast_price)*100;
+            float per = (profit/Coast_price)*100;
             cout<<"loss Percentage is:"<<per<<"%";
         }
     }
@@ -62,10 +62,25 @@ class Power_And_Root : public P_and_L_And_Per
         return a*a*a;
     }
     int power(int a, int b){
-        return power(a, b);
+        return pow(a, b);
     }
 };
-class algebra : public Power_And_Root{
+class Advance:public Power_And_Root{
+    int fact,n;
+    public:
+    int factorial(){
+        cout<<"\nEnter Number to find its factorial: ";
+        cin>>n;
+        fact = 1;
+        for(int i=1;i<=n;i++){
+            fact *=i;
+        }
+        cout<<"\nFactorial of :"<<n<<"IS:"<<fact;
+
+    }
+};
+
+class algebra : public Advance{
     float a, b, c, x1, x2;
     public:
     int LinearE(){
@@ -132,6 +147,7 @@ int main(){
         cout << "\n11. Linear Equation";
         cout << "\n12. Quadratic Equation";
         cout << "\n13. (a+b)^2 & (a-b)^2";
+        cout << "\n14. Factorial";
         cout << "\n0. Exit";
         cout<<"\nEnter your choice to perform operation.";
         cin>>choice;
@@ -200,6 +216,10 @@ int main(){
             case 13:
             obj.a_PM_b_squar();
             break;
+
+            case 14:
+            obj.factorial();
+            break;;
 
             case 0:
             exit(0);
