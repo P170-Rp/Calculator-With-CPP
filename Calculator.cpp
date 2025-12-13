@@ -58,7 +58,7 @@ class Power_And_Root : public P_and_L_And_Per
     int square(int a){
         return a*a;
     }
-    int cude(int a){
+    int cube(int a){
         return a*a*a;
     }
     int power(int a, int b){
@@ -118,12 +118,22 @@ class algebra : public Power_And_Root{
 
 int main(){
     algebra obj;
-    float a,b;
+    float a,b,x, y;;
     int choice;
     while (1)
     {
         cout<<"\n================Calculator in CPP==================";
-        cout<<"\n1.Addition.\n2.Subtraction.\n3.Multiplication.\n4.Division.\n5.Remender.\n\nEnter your Choice to perform operation. ";
+        cout<<"\n1.Addition.\n2.Subtraction.\n3.Multiplication.\n4.Division.\n5.Remender.";
+        cout << "\n6. Profit & Loss";
+        cout << "\n7. Profit/Loss Percentage";
+        cout << "\n8. Square";
+        cout << "\n9. Cube";
+        cout << "\n10. Power";
+        cout << "\n11. Linear Equation";
+        cout << "\n12. Quadratic Equation";
+        cout << "\n13. (a+b)^2 & (a-b)^2";
+        cout << "\n0. Exit";
+        cout<<"\nEnter your choice to perform operation.";
         cin>>choice;
         switch(choice){
             case 1: 
@@ -155,6 +165,47 @@ int main(){
             break;
 
             case 6:
+            cin >> a >> b;
+            obj.p_L(a, b);
+            break;
+
+            case 7:
+            cin >> a;
+            obj.p_L_per(a);
+            break;
+
+            case 8:
+            cin >> x;
+            cout << obj.square(x);
+            break;
+
+            case 9:
+            cin >> x;
+            cout << obj.cube(x);
+            break;
+
+            case 10:
+            cin >> x >> y;
+            cout << obj.power(x, y);
+            break;
+
+            case 11:
+            obj.LinearE();
+            break;
+
+            case 12:
+            obj.QuadraticEquation();
+            break;
+
+            case 13:
+            obj.a_PM_b_squar();
+            break;
+
+            case 0:
+            exit(0);
+
+            default:
+            cout << "Invalid choice!";
 
 
 
