@@ -1,4 +1,5 @@
 #include<iostream>
+#include<stdlib.h>
 #include<cmath>
 using namespace std;
 class Besic_Arithmetic{
@@ -206,11 +207,7 @@ int main(){
 
             default:
             cout << "Invalid choice!";
-
-
-
         }
-
     }
     return 0;
 }
