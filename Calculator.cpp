@@ -81,7 +81,26 @@ class Advance:public Power_And_Root{
     }
 };
 
-class algebra : public Advance{
+class fabo : public Advance{
+     int n, a = 0, b = 1, next;
+     public:
+void fav(){
+
+    cout << "Enter number of terms: ";
+    cin >> n;
+
+    cout << "Fibonacci Series: ";
+
+    for (int i = 1; i <= n; i++) {
+        cout << a << " ";
+        next = a + b;
+        a = b;
+        b = next;
+    }
+  }
+};
+
+class algebra : public fabo{
     float a, b, c, x1, x2;
     public:
     int LinearE(){
@@ -132,6 +151,7 @@ class algebra : public Advance{
     }
 };
 
+
 int main(){
     algebra obj;
     float a,b,x, y;;
@@ -149,6 +169,7 @@ int main(){
         cout << "\n12. Quadratic Equation";
         cout << "\n13. (a+b)^2 & (a-b)^2";
         cout << "\n14. Factorial";
+        cout << "\n15. Find a Fabonacci of a NO..";
         cout << "\n0. Exit";
         cout<<"\nEnter your choice to perform operation.";
         cin>>choice;
@@ -220,7 +241,11 @@ int main(){
 
             case 14:
             obj.factorial();
-            break;;
+            break;
+     
+            case 15:
+            obj.fab();
+            break;
 
             case 0:
             exit(0);
